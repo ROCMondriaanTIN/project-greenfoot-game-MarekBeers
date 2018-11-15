@@ -7,6 +7,11 @@ import greenfoot.*;
  */
 public class Mover extends Actor {
 
+    private int speed = 2; //movement speed  
+    private int vSpeed = 0; //vertical speed  
+    private int acceleration = 2; //gravity effect while falling  
+    private int jumpStrength = -8; 
+    
     public int screenX;
     public int screenY;
     public double velocityX;
@@ -28,6 +33,9 @@ public class Mover extends Actor {
         hasCamera = true;
     }
 
+    
+    
+    
     /**
      * Removes the camera if a camera has been set
      */
