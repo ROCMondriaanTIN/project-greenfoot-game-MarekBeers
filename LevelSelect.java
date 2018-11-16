@@ -45,12 +45,13 @@ public class LevelSelect extends World
     {
 
         
-        
         Level1 level1 = new Level1();
         addObject(level1,200,280);
         Level2 level2 = new Level2();
         addObject(level2,500,280);
         Level3 level3 = new Level3();
         addObject(level3,800,280);
+        Level_1Pic level_1Pic = new Level_1Pic();
+        addObject(level_1Pic,200,380);
     }
 }

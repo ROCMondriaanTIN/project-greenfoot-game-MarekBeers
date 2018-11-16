@@ -99,6 +99,7 @@ public class Hero extends Mover {
         
         animationCounter ++;
         
+        location();
         
         velocityX *= drag;
         velocityY += acc;
@@ -127,7 +128,12 @@ public class Hero extends Mover {
         }
     }
         
-    
+    public int location()
+    {
+        int x = getX();
+        int y = getY();
+        return 0;
+    }
     
     public boolean onGround()
     {
