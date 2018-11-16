@@ -42,6 +42,8 @@ public class Hero extends Mover {
     private int acceleration = 2; //gravity effect while falling  
     private int jumpStrength = -8;
     
+    private int level;
+    
     boolean walking;
     boolean kijkpos;
     boolean lopen;
@@ -50,13 +52,13 @@ public class Hero extends Mover {
     private int coolSpeed;
     public int pause = 5;
     
-    public Hero() {
+    public Hero(int level) {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
         setImage("p1.png");
-        
+        this.level = level;
         
     }
 
@@ -108,7 +110,8 @@ public class Hero extends Mover {
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 //getWorld().removeObject(this);
-                setLocation(255, 700);
+                //setLocation(255, 700);
+                Greenfoot.setWorld(new GameOver(level));
                 break;
             }
         }
@@ -117,7 +120,8 @@ public class Hero extends Mover {
             TileExtended tile = (TileExtended) liquidWater;
             if (tile != null && tile.type == "water") {
                 //getWorld().removeObject(this);
-                setLocation(255, 700);
+                //setLocation(255, 700);
+                Greenfoot.setWorld(new GameOver(level));
                 break;
             }
         }
