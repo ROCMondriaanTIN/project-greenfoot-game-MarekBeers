@@ -55,6 +55,10 @@ public class StartScherm extends World
             Greenfoot.setWorld(new LevelSelect());
         }
 
+        if (Greenfoot.mouseClicked(this))
+        {
+            Greenfoot.setWorld(new LevelSelect());
+        }
     }
 
     /**
@@ -65,5 +69,7 @@ public class StartScherm extends World
     {
         StartButtons startButtons = new StartButtons();
         addObject(startButtons,492,580);
+        LDG lDG = new LDG();
+        addObject(lDG,500,132);
     }
 }

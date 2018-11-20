@@ -6,28 +6,7 @@ import greenfoot.*;
  * @author R. Springer
  */
 public class Hero extends Mover {
-    private GreenfootImage standing = new GreenfootImage("p1_walk08.png" );
-    private GreenfootImage standinginv = new GreenfootImage("p1inv_walk08.png" );
-    private GreenfootImage run1 = new GreenfootImage("p1_walk01.png");
-    private GreenfootImage run2 = new GreenfootImage("p1_walk02.png");
-    private GreenfootImage run3 = new GreenfootImage("p1_walk03.png");
-    private GreenfootImage run4 = new GreenfootImage("p1_walk04.png");
-    private GreenfootImage run5 = new GreenfootImage("p1_walk05.png");
-    private GreenfootImage run6 = new GreenfootImage("p1_walk06.png");
-    private GreenfootImage run7 = new GreenfootImage("p1_walk07.png");
-    private GreenfootImage run8 = new GreenfootImage("p1_walk08.png");
     
-    private GreenfootImage run10 = new GreenfootImage("p1_walk10.png");
-    private GreenfootImage invrun1 = new GreenfootImage("p1inv_walk01.png");
-    private GreenfootImage invrun2 = new GreenfootImage("p1inv_walk02.png");
-    private GreenfootImage invrun3 = new GreenfootImage("p1inv_walk03.png");
-    private GreenfootImage invrun4 = new GreenfootImage("p1inv_walk04.png");
-    private GreenfootImage invrun5 = new GreenfootImage("p1inv_walk05.png");
-    private GreenfootImage invrun6 = new GreenfootImage("p1inv_walk06.png");
-    private GreenfootImage invrun7 = new GreenfootImage("p1inv_walk07.png");
-    private GreenfootImage invrun8 = new GreenfootImage("p1inv_walk08.png");
-    
-    private GreenfootImage invrun10 = new GreenfootImage("p1inv_walk10.png");
     private int frame = 1;
     private int animationCounter = 0;
     
@@ -43,6 +22,7 @@ public class Hero extends Mover {
     private int jumpStrength = -8;
     
     private int level;
+    
     
     boolean walking;
     boolean kijkpos;
@@ -68,33 +48,7 @@ public class Hero extends Mover {
         
         onGround();
         
-       /*
-        if (oldY < getY() || oldY > getY())
-        {
-            canJump = false;
-            
-        }
-        else
-        {
-            canJump = true;
-        }
-        //if (Greenfoot.isKeyDown("w"))
-        //{
-            //canJump;
-        //}
-        
-        
-        /*
-            if(pause>0)
-            {    
-                pause--;
-                if(pause == 0)
-                {
-                    oldY = getY();
-                    pause = 5;
-                }
-            }
-        */
+       
         handleInput();
         
         animationCounter ++;
@@ -152,39 +106,35 @@ public class Hero extends Mover {
         lopen = true;
         if(frame == 1)
         {
-            setImage(invrun1);
+            setImage("p1inv_walk01.png");
         }
         else if(frame == 2)
         {
-            setImage(invrun2);
+            setImage("p1inv_walk02.png");
         }
         else if(frame == 3)
         {
-            setImage(invrun3);
+            setImage("p1inv_walk03.png");
         }
         else if(frame == 4)
         {
-            setImage(invrun4);
+            setImage("p1inv_walk04.png");
         }
         else if(frame == 5)
         {
-            setImage(invrun5);
+            setImage("p1inv_walk05.png");
         }
         else if(frame == 6)
         {
-            setImage(invrun6);
+            setImage("p1inv_walk06.png");
         }
         else if(frame == 7)
         {
-            setImage(invrun7);
+            setImage("p1inv_walk07.png");
         }
         else if(frame == 8)
         {
-            setImage(invrun8);
-        }
-        else if(frame == 9)
-        {
-            setImage(invrun10);
+            setImage("p1inv_walk08.png");
             frame = 1;
             return;
         }
@@ -200,39 +150,35 @@ public class Hero extends Mover {
         lopen = true;
         if(frame == 1)
         {
-            setImage(run1);
+            setImage("p1_walk01.png");
         }
         else if(frame == 2)
         {
-            setImage(run2);
+            setImage("p1_walk02.png");
         }
         else if(frame == 3)
         {
-            setImage(run3);
+            setImage("p1_walk03.png");
         }
         else if(frame == 4)
         {
-            setImage(run4);
+            setImage("p1_walk04.png");
         }
         else if(frame == 5)
         {
-            setImage(run5);
+            setImage("p1_walk05.png");
         }
         else if(frame == 6)
         {
-            setImage(run6);
+            setImage("p1_walk06.png");
         }
         else if(frame == 7)
         {
-            setImage(run7);
+            setImage("p1_walk07.png");
         }
         else if(frame == 8)
         {
-            setImage(run8);
-        }
-        else if(frame == 9)
-        {
-            setImage(run10);
+            setImage("p1_walk08.png");
             frame = 1;
             return;
         }
@@ -249,11 +195,11 @@ public class Hero extends Mover {
             lopen = false;
             if (!lopen){
             if (kijkpos){
-                setImage (standing);
+                setImage ("p1_walk08.png");
             }
             else
             {
-                setImage (standinginv);
+                setImage ("p1inv_walk08.png");
             }
         }
         }
@@ -264,8 +210,8 @@ public class Hero extends Mover {
     public void handleInput() {
         
         
-        if (Greenfoot.isKeyDown("w") && onGround() == true) {
-            velocityY = -15;
+        if (Greenfoot.isKeyDown("w") && velocityY == 0) {
+            velocityY = -14.5;
         }
 
         

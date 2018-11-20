@@ -14,7 +14,7 @@ public class MyWorld extends World {
      * Constructor for objects of class MyWorld.
      *
      */
-    public MyWorld() {
+    public MyWorld(/*int pop*/) {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
@@ -49,14 +49,16 @@ public class MyWorld extends World {
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
         Hero hero = new Hero(1);
-
+            
+        
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
-        addObject(camera, 0, 0);
+        addObject(camera, 255, 700);
         addObject(hero, 255, 700);
         addObject(new Enemy(), 1530, 770);
+       
 
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
