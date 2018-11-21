@@ -146,7 +146,7 @@ public class Hero extends Mover {
         
         frame ++;
     }
-    
+    //hello there:]
     public void animateRight(int poppoe)
     {
         walking = true;
