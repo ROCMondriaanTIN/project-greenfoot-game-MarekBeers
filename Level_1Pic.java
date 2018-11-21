@@ -21,7 +21,7 @@ public class Level_1Pic extends Actor
     {
         if (Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new MyWorld(pop));
+            Greenfoot.setWorld(new MyWorldVraag(pop, 1));
         }
     }    
 }

@@ -31,5 +31,7 @@ public class GameOver extends World
     {
         Restart restart = new Restart(level, pop);
         addObject(restart,500,700);
+        Cross cross = new Cross(pop);
+        addObject(cross,966,32);
     }
 }

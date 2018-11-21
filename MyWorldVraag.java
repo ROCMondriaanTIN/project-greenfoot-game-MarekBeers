@@ -42,7 +42,11 @@ public class MyWorldVraag extends World
     private void prepare(int pop, int level)
     {
 
+        Cross cross = new Cross(pop);
+        addObject(cross, 965, 30);
         Cont cont = new Cont(pop, level);
         addObject(cont,484,699);
+        Weiland weiland = new Weiland();
+        addObject(weiland,499,486);
     }
 }
