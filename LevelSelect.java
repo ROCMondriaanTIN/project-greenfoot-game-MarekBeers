@@ -9,31 +9,33 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class LevelSelect extends World
 {
 
-    
+    int popie;
     /**
      * Constructor for objects of class LevelSelect.
      * 
      */
-    public LevelSelect()
+    public LevelSelect(int pop)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1); 
-        prepare();
+        this.popie = pop;
+        prepare(pop);
+        
     }
 
     public void act()
     {
         if (Greenfoot.isKeyDown("1"))
         {
-            Greenfoot.setWorld(new MyWorld());
+            Greenfoot.setWorld(new MyWorld(popie));
         }
         if (Greenfoot.isKeyDown("2"))
         {
-            Greenfoot.setWorld(new Testing());
+            Greenfoot.setWorld(new Testing(popie));
         }
         if (Greenfoot.isKeyDown("3"))
         {
-            Greenfoot.setWorld(new StartScherm());
+            //Greenfoot.setWorld(new StartScherm(popie));
         }
     }
 
@@ -41,16 +43,17 @@ public class LevelSelect extends World
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    private void prepare()
+    private void prepare(int kop)
     {
 
-        Level1 level1 = new Level1();
+        
+        Level1 level1 = new Level1(kop);
         addObject(level1,200,280);
-        Level2 level2 = new Level2();
+        Level2 level2 = new Level2(kop);
         addObject(level2,500,280);
-        Level3 level3 = new Level3();
+        Level3 level3 = new Level3(kop);
         addObject(level3,800,280);
-        Level_1Pic level_1Pic = new Level_1Pic();
+        Level_1Pic level_1Pic = new Level_1Pic(kop);
         addObject(level_1Pic,200,380);
         Level4 level4 = new Level4();
         addObject(level4,200,500);
@@ -58,14 +61,15 @@ public class LevelSelect extends World
         addObject(level5,500,500);
         Level6 level6 = new Level6();
         addObject(level6,800,500);
-        BlueBox blueBox = new BlueBox();
+        BlueBox blueBox = new BlueBox(kop);
         addObject(blueBox,500,750);
-        BlauwHoofdje blauwHoofdje = new BlauwHoofdje();
-        addObject(blauwHoofdje,450,750);
+        BlauwHoofdje blauwHoofdje = new BlauwHoofdje(kop);
+        addObject(blauwHoofdje,500,750);
         blueBox.setLocation(500,750);
-        GroenHoofdje groenHoofdje = new GroenHoofdje();
-        addObject(groenHoofdje,500,750);
-        RozeHoofdje rozeHoofdje = new RozeHoofdje();
+        GroenHoofdje groenHoofdje = new GroenHoofdje(kop);
+        addObject(groenHoofdje,450,750);
+        RozeHoofdje rozeHoofdje = new RozeHoofdje(kop);
         addObject(rozeHoofdje,550,750);
+        
     }
 }

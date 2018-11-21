@@ -10,15 +10,17 @@ public class MyWorld extends World {
     private CollisionEngine ce;
     public int level = 1;
 
+    public int popie;
     /**
      * Constructor for objects of class MyWorld.
      *
      */
-    public MyWorld(/*int pop*/) {
+    public MyWorld(int pop) {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
 
+        this.popie = pop;
         int[][] map = {
 
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -48,7 +50,7 @@ public class MyWorld extends World {
         Camera camera = new Camera(te);
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero(1);
+        Hero hero = new Hero(1, popie);
             
         
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
@@ -81,7 +83,7 @@ public class MyWorld extends World {
      */
     private void prepare()
     {
-        Cross cross = new Cross();
+        Cross cross = new Cross(popie);
         addObject(cross,966,34);
     }
 }

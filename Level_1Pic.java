@@ -8,6 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level_1Pic extends Actor
 {
+    int pop;
+    public Level_1Pic(int pop)
+    {
+        this.pop = pop;
+    }
     /**
      * Act - do whatever the Level_1Pic wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,7 +21,7 @@ public class Level_1Pic extends Actor
     {
         if (Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new MyWorld());
+            Greenfoot.setWorld(new MyWorld(pop));
         }
     }    
 }

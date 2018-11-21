@@ -11,15 +11,18 @@ public class Testing extends World
     private CollisionEngine ce;
     public int level = 1;
 
+    int pop;
+    
     /**
      * Constructor for objects of class Testing.
      * 
      */
-    public Testing()
+    public Testing(int pop)
     {    
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
 
+        this.pop = pop;
         int[][] map = {
 
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -49,7 +52,7 @@ public class Testing extends World
         Camera camera = new Camera(te);
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero(2);
+        Hero hero = new Hero(2, pop);
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -78,7 +81,7 @@ public class Testing extends World
      */
     private void prepare()
     {
-        Cross cross = new Cross();
+        Cross cross = new Cross(pop);
         addObject(cross,964,33);
     }
 }

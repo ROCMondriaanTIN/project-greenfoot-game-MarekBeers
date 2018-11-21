@@ -8,6 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GroenHoofdje extends Actor
 {
+    int pop;
+    public GroenHoofdje(int pop)
+    {
+        this.pop = pop;
+    }
     /**
      * Act - do whatever the GroenHoofdje wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,7 +21,7 @@ public class GroenHoofdje extends Actor
     {
         if (Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new PopSelect());
+            Greenfoot.setWorld(new PopSelect(pop));
         }
     }    
 }

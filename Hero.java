@@ -22,8 +22,9 @@ public class Hero extends Mover {
     private int jumpStrength = -8;
     
     private int level;
-    
-    
+     int pop = 1;
+    int poppoe;
+    int poppie;
     boolean walking;
     boolean kijkpos;
     boolean lopen;
@@ -32,13 +33,14 @@ public class Hero extends Mover {
     private int coolSpeed;
     public int pause = 5;
     
-    public Hero(int level) {
+    public Hero(int level, int pop) {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
         setImage("p1.png");
         this.level = level;
+        this.pop = pop;
         
     }
 
@@ -49,7 +51,7 @@ public class Hero extends Mover {
         onGround();
         
        
-        handleInput();
+        handleInput(pop);
         
         animationCounter ++;
         
@@ -66,8 +68,9 @@ public class Hero extends Mover {
             if (enemy != null) {
                 //getWorld().removeObject(this);
                 //setLocation(255, 700);
-                Greenfoot.setWorld(new GameOver(level));
-                break;
+                int poppetjenr = 1;
+                Greenfoot.setWorld(new GameOver(level, pop));
+                return;
             }
         }
         
@@ -76,7 +79,7 @@ public class Hero extends Mover {
             if (tile != null && tile.type == "water") {
                 //getWorld().removeObject(this);
                 //setLocation(255, 700);
-                Greenfoot.setWorld(new GameOver(level));
+                Greenfoot.setWorld(new GameOver(level, pop));
                 break;
             }
         }
@@ -99,42 +102,43 @@ public class Hero extends Mover {
     
     
     
-    public void animateLeft()
+    public void animateLeft(int poppoe)
     {
         walking = true;
         kijkpos = false;
         lopen = true;
+        this.poppie = poppoe;
         if(frame == 1)
         {
-            setImage("p1inv_walk01.png");
+            setImage("p"+ poppie +"inv_walk01.png");
         }
         else if(frame == 2)
         {
-            setImage("p1inv_walk02.png");
+            setImage("p"+ poppie +"inv_walk02.png");
         }
         else if(frame == 3)
         {
-            setImage("p1inv_walk03.png");
+            setImage("p"+ poppie +"inv_walk03.png");
         }
         else if(frame == 4)
         {
-            setImage("p1inv_walk04.png");
+            setImage("p"+ poppie +"inv_walk04.png");
         }
         else if(frame == 5)
         {
-            setImage("p1inv_walk05.png");
+            setImage("p"+ poppie +"inv_walk05.png");
         }
         else if(frame == 6)
         {
-            setImage("p1inv_walk06.png");
+            setImage("p"+ poppie +"inv_walk06.png");
         }
         else if(frame == 7)
         {
-            setImage("p1inv_walk07.png");
+            setImage("p"+ poppie +"inv_walk07.png");
         }
         else if(frame == 8)
         {
-            setImage("p1inv_walk08.png");
+            setImage("p"+ poppie +"inv_walk08.png");
             frame = 1;
             return;
         }
@@ -143,42 +147,43 @@ public class Hero extends Mover {
         frame ++;
     }
     
-    public void animateRight()
+    public void animateRight(int poppoe)
     {
         walking = true;
         kijkpos = true;
         lopen = true;
+        this.poppie = poppoe;
         if(frame == 1)
         {
-            setImage("p1_walk01.png");
+            setImage("p"+ poppie +"_walk01.png");
         }
         else if(frame == 2)
         {
-            setImage("p1_walk02.png");
+            setImage("p"+ poppie +"_walk02.png");
         }
         else if(frame == 3)
         {
-            setImage("p1_walk03.png");
+            setImage("p"+ poppie +"_walk03.png");
         }
         else if(frame == 4)
         {
-            setImage("p1_walk04.png");
+            setImage("p"+ poppie +"_walk04.png");
         }
         else if(frame == 5)
         {
-            setImage("p1_walk05.png");
+            setImage("p"+ poppie +"_walk05.png");
         }
         else if(frame == 6)
         {
-            setImage("p1_walk06.png");
+            setImage("p"+ poppie +"_walk06.png");
         }
         else if(frame == 7)
         {
-            setImage("p1_walk07.png");
+            setImage("p"+ poppie +"_walk07.png");
         }
         else if(frame == 8)
         {
-            setImage("p1_walk08.png");
+            setImage("p"+ poppie +"_walk08.png");
             frame = 1;
             return;
         }
@@ -187,19 +192,20 @@ public class Hero extends Mover {
         frame ++;
     }
    
-    public void stopWalking()
+    public void stopWalking(int poppoe)
     {
+        
         for(int i = 1; i<=2; i++)
         {
             i++;
             lopen = false;
             if (!lopen){
             if (kijkpos){
-                setImage ("p1_walk08.png");
+                setImage ("p"+ poppoe +"_walk08.png");
             }
             else
             {
-                setImage ("p1inv_walk08.png");
+                setImage ("p"+ poppoe +"inv_walk08.png");
             }
         }
         }
@@ -207,9 +213,9 @@ public class Hero extends Mover {
         }
         
     
-    public void handleInput() {
+    public void handleInput(int pop) {
         
-        
+        this.poppoe = pop;
         if (Greenfoot.isKeyDown("w") && velocityY == 0) {
             velocityY = -14.5;
         }
@@ -217,22 +223,41 @@ public class Hero extends Mover {
         
         if (!Greenfoot.isKeyDown("a")) {
             if(!Greenfoot.isKeyDown("d"))
-            stopWalking();
+            stopWalking(poppoe);
         }
         
        
         
         if (Greenfoot.isKeyDown("a")) {
-            velocityX = -6;
-            
+            if(poppoe == 1){
+                velocityX = -6;
+            }
+            else if(poppoe == 2)
+            {
+                velocityX = -7;
+            }
+            else if (poppoe == 3)
+            {
+                velocityX = -8;
+            }
             if(animationCounter % 2 == 0)
-            animateLeft();
+                animateLeft(poppoe);
             
         } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = 6;
             
+            if(poppoe == 1){
+                velocityX = 6;
+            }
+            else if(poppoe == 2)
+            {
+                velocityX = 7;
+            }
+            else if (poppoe == 3)
+            {
+                velocityX = 8;
+            }
             if(animationCounter % 2 == 0)
-            animateRight();
+            animateRight(poppoe);
         }
     }
 

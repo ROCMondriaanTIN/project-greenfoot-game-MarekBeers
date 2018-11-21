@@ -9,10 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Restart extends Actor
 {
     int level;
-    
-    Restart(int level)
+    int popie;
+    int knopppie;
+    Restart(int level, int pop)
     {
         this.level = level;
+        this.popie = pop;
     }
     
     /**
@@ -21,26 +23,35 @@ public class Restart extends Actor
      */
     public void act() 
     {
+        GrootBlauwHoofdje hdgb = new GrootBlauwHoofdje(level);
+        
+        resseting(popie);
+    
+    }
+    public void resseting(int popie)
+    {
+        this.knopppie = popie;
+        //System.out.println(this.knopppie);
         if (level == 1){
         if (Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new MyWorld());
+            Greenfoot.setWorld(new MyWorld(knopppie));
         }
     }
     else if (level == 2)
     {
         if (Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new Testing());
+            Greenfoot.setWorld(new Testing(knopppie));
         }
     }
     else if (level == 3)
     {
         if (Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new MyWorld());
+            Greenfoot.setWorld(new MyWorld(knopppie));
         }
     }
+    }
     
-    }    
 }
