@@ -96,5 +96,13 @@ public class MyWorld extends World {
         addObject(o,2940,550);
         E e = new E();
         addObject(e,4890,410);
+        Munt munt = new Munt();
+        addObject(munt,770,487);
+        Munt munt2 = new Munt();
+        addObject(munt2,516,552);
+        Munt munt3 = new Munt();
+        addObject(munt3,111,531);
+        Munt munt4 = new Munt();
+        addObject(munt4,326,548);
     }
 }

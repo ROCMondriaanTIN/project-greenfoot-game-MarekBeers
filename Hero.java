@@ -9,7 +9,7 @@ public class Hero extends Mover {
     
     private int frame = 1;
     private int animationCounter = 0;
-    
+    int punten =0;
     private final double gravity;
     private final double acc;
     private final double drag;
@@ -84,7 +84,14 @@ public class Hero extends Mover {
             }
         }
     }
-        
+     
+    
+    public int geefPunt(int geld)
+    {
+        punten = punten + geld;
+        return punten;
+    }
+    
     public int location()
     {
         int x = getX();
