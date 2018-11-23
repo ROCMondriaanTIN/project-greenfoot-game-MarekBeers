@@ -37,10 +37,10 @@ public class GrootRozeHoofdje extends Actor
             Cross cross = new Cross(pop);
             Restart restart = new Restart(level, pop);
             BlueBox blue = new BlueBox(pop);
-            Level2 lv2 = new Level2(pop);
-            Level3 lv3 = new Level3(pop);
-            Level1 lv1 = new Level1(pop);
-            Level_1Pic pic1 = new Level_1Pic(pop);
+            //Level2 lv2 = new Level2(pop);
+            //Level3 lv3 = new Level3(pop);
+            //Level1 lv1 = new Level1(pop);
+            //Level_1Pic pic1 = new Level_1Pic(pop);
             Greenfoot.setWorld(new LevelSelect(pop));
         }
     }   

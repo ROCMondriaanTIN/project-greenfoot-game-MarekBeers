@@ -45,22 +45,39 @@ public class LevelSelect extends World
      */
     private void prepare(int kop)
     {
-
+        SelectLevelNummer l1 = new SelectLevelNummer(kop, 1);
+        addObject(l1, 200,280);
         
-        Level1 level1 = new Level1(kop);
+        SelectLevelNummer l2 = new SelectLevelNummer(kop, 2);
+        addObject(l2, 500,280);
+        
+        SelectLevelNummer l3 = new SelectLevelNummer(kop, 3);
+        addObject(l3, 800,280);
+        
+        SelectLevelNummer l4 = new SelectLevelNummer(kop, 4);
+        addObject(l4, 200,500);
+        
+        SelectLevelNummer l5 = new SelectLevelNummer(kop, 5);
+        addObject(l5, 500,500);
+        
+        SelectLevelNummer l6 = new SelectLevelNummer(kop, 6);
+        addObject(l6, 800,500);
+        
+       /* Level1 level1 = new Level1(kop);
         addObject(level1,200,280);
         Level2 level2 = new Level2(kop);
         addObject(level2,500,280);
         Level3 level3 = new Level3(kop);
         addObject(level3,800,280);
-        Level_1Pic level_1Pic = new Level_1Pic(kop);
-        addObject(level_1Pic,200,380);
         Level4 level4 = new Level4();
         addObject(level4,200,500);
         Level5 level5 = new Level5();
         addObject(level5,500,500);
         Level6 level6 = new Level6();
         addObject(level6,800,500);
+        */
+        Level_1Pic level_1Pic = new Level_1Pic(kop);
+        addObject(level_1Pic,200,380);
         BlueBox blueBox = new BlueBox(kop);
         addObject(blueBox,500,750);
         BlauwHoofdje blauwHoofdje = new BlauwHoofdje(kop);
