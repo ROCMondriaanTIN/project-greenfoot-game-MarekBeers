@@ -58,6 +58,7 @@ private CollisionEngine ce;
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         
+        showText("punten: "+ Hero.punten, 100, 100);
         
         addObject(new GrootBlauwHoofdje(level), 500, 400);
         addObject(new GrootGroenHoofdje(level), 200, 400);
