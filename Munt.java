@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Munt extends Mover
 {
-    private int geld = 5000;
+    private int geld = 5;
 
     public void act() 
     {
