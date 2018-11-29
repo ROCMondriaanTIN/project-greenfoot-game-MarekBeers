@@ -20,7 +20,7 @@ public class GrootRozeHoofdje extends Actor
      */
     public void act() 
     {
-            
+        if(Hero.punten >= 3000){    
         if (Greenfoot.mouseClicked(this))
         {
             pop = 3;
@@ -43,5 +43,6 @@ public class GrootRozeHoofdje extends Actor
             //Level_1Pic pic1 = new Level_1Pic(pop);
             Greenfoot.setWorld(new LevelSelect(pop));
         }
+    }
     }   
 }

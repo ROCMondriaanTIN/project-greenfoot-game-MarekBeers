@@ -9,7 +9,10 @@ public class MyWorld extends World {
 
     private CollisionEngine ce;
     public int level = 1;
+    
 
+    Hero hero;
+    Timer timer;
     public int popie;
     /**
      * Constructor for objects of class MyWorld.
@@ -20,6 +23,8 @@ public class MyWorld extends World {
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
 
+        Hero h = (Hero)hero;
+        timer = new Timer();
         this.popie = pop;
         int[][] map = {
 
@@ -62,6 +67,8 @@ public class MyWorld extends World {
         addObject(new Enemy(), 1530, 770);
        
 
+        showText("Punten: " + h.punten, 500, 20);
+        
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);
@@ -74,9 +81,18 @@ public class MyWorld extends World {
     public void act() {
         ce.update();
 
-        
+        showText("Tijd: "+timer.Time(), 500, 50);
+         if(timer.Time() <= 0)
+        {
+            Greenfoot.setWorld(new GameOver(1, popie));
+        }
     }
 
+    public void setImage()
+    {
+        
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -86,7 +102,9 @@ public class MyWorld extends World {
         Cross cross = new Cross(popie);
         addObject(cross,966,34);
 
-        K k = new K();
+        //TimerRunOut timerrunout = new TimerRunOut();
+
+        K k = new K(level);
         addObject(k,1525,600);
         Deur_Mid deur_Mid = new Deur_Mid(popie);
         addObject(deur_Mid,5700,625);
@@ -96,13 +114,76 @@ public class MyWorld extends World {
         addObject(o,2940,550);
         E e = new E();
         addObject(e,4890,410);
+
         Munt munt = new Munt();
-        addObject(munt,770,487);
+        addObject(munt,1044,489);
         Munt munt2 = new Munt();
-        addObject(munt2,516,552);
+        addObject(munt2,1108,489);
         Munt munt3 = new Munt();
-        addObject(munt3,111,531);
+        addObject(munt3,1460,628);
         Munt munt4 = new Munt();
-        addObject(munt4,326,548);
+        addObject(munt4,1594,628);
+        Munt munt5 = new Munt();
+        addObject(munt5,1891,250);
+        Munt munt6 = new Munt();
+        addObject(munt6,1890,190);
+        Munt munt7 = new Munt();
+        addObject(munt7,1891,120);
+        Munt munt8 = new Munt();
+        addObject(munt8,2080,320);
+        Munt munt9 = new Munt();
+        addObject(munt9,2130,320);
+        Munt munt10 = new Munt();
+        addObject(munt10,2313,430);
+        Munt munt11 = new Munt();
+        addObject(munt11,2487,560);
+        Munt munt12 = new Munt();
+        addObject(munt12,1888,610);
+        Munt munt13 = new Munt();
+        addObject(munt13,2064,610);
+        Munt munt14 = new Munt();
+        addObject(munt14,1952,540);
+        Munt munt15 = new Munt();
+        addObject(munt15,2006,540);
+        Munt munt16 = new Munt();
+        addObject(munt16,2880,590);
+        Munt munt17 = new Munt();
+        addObject(munt17,2998,590);
+        Munt munt18 = new Munt();
+        addObject(munt18,3810,615);
+        Munt munt19 = new Munt();
+        addObject(munt19,3687,615);
+        Munt munt20 = new Munt();
+        addObject(munt20,3570,615);
+        Munt munt21 = new Munt();
+        addObject(munt21,3746,440);
+        Munt munt22 = new Munt();
+        addObject(munt22,3811,440);
+        Munt munt23 = new Munt();
+        addObject(munt23,3959,340);
+        Munt munt24 = new Munt();
+        addObject(munt24,4043,380);
+        Munt munt25 = new Munt();
+        addObject(munt25,4832,800);
+        Munt munt26 = new Munt();
+        addObject(munt26,4896,800);
+        Munt munt27 = new Munt();
+        addObject(munt27,4950,800);
+        Munt munt28 = new Munt();
+        addObject(munt28,4828,430);
+        Munt munt29 = new Munt();
+        addObject(munt29,4947,430);
+        Munt munt30 = new Munt();
+        addObject(munt30,5855,690);
+        Munt munt31 = new Munt();
+        addObject(munt31,5920,690);
+        Munt munt32 = new Munt();
+        addObject(munt32,5980,690);
+        Munt munt33 = new Munt();
+        addObject(munt33,5855,615);
+        Munt munt34 = new Munt();
+        addObject(munt34,5920,615);
+        Munt munt35 = new Munt();
+        addObject(munt35,5980,615);
     }
 }

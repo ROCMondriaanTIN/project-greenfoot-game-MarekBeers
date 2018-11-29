@@ -8,18 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class O extends Mover
 {
+    private int geld = 50;
     /**
-     * Act - do whatever the O wants to do. This method is called whenever
+     * Act - do whatever the E wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        for (Actor enemy : getIntersectingObjects(Hero.class))
+        for (Actor hero : getIntersectingObjects(Hero.class))
         {
-            if (enemy != null)
+            if (hero != null)
             {
+                Hero h = (Hero)hero;
+                h.geefPunt(geld);
+                h.geefo("O");
                 getWorld().removeObject(this);
-                break;
+                
             }
         }
         applyVelocity();

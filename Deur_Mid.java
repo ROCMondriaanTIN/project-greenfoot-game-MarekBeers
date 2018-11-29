@@ -21,7 +21,7 @@ public class Deur_Mid extends Mover
     {
         if (getOneIntersectingObject(Hero.class)!=null && getWorld().getObjects(K.class).isEmpty() && getWorld().getObjects(O.class).isEmpty() && getWorld().getObjects(E.class).isEmpty())
         {
-            Greenfoot.setWorld(new LevelSelect(pop));
+            Greenfoot.setWorld(new LevelCleared(pop));
         }
         applyVelocity();
     }    

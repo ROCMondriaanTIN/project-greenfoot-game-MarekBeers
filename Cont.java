@@ -21,6 +21,12 @@ public class Cont extends Actor
      */
     public void act() 
     {
+          
+        Levelslec(pop, level);
+  }
+  
+    public int Levelslec(int pop, int level)
+    {
         if(level == 1)
         {
            if (Greenfoot.mouseClicked(this))
@@ -33,7 +39,20 @@ public class Cont extends Actor
             if (Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new Testing(pop));
+        }
+        }
+        else if (level == 10)
+        {
+            if (Greenfoot.mouseClicked(this))
+        {
+            Greenfoot.setWorld(new LevelSelect(pop));
         } 
+        }
+        return 0;
     }
-    }    
+    
+    
+  
 }
+    
+

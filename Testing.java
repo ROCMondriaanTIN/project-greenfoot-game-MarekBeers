@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Testing extends World
 {
     private CollisionEngine ce;
-    public int level = 1;
+    public int level = 2;
 
     int pop;
     
@@ -83,6 +83,10 @@ public class Testing extends World
     {
         Cross cross = new Cross(pop);
         addObject(cross,964,33);
+        Munt munt = new Munt();
+        addObject(munt,572,513);
+        K k = new K(2);
+        addObject(k,828,480);
     }
 }
 

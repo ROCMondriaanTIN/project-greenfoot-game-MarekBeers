@@ -86,10 +86,48 @@ public class Hero extends Mover {
     }
      
     
+    
+    public String geefK(String k)
+    {
+        if(level == 1)
+        {
+            getWorld().showText(k, 20, 20);
+        }
+        else if(level == 2)
+        {
+            getWorld().showText(k, 200, 20);
+        }
+        return k;
+    }
+    public String geefe(String e)
+    {
+        if(level == 1)
+        {
+            getWorld().showText(e, 50, 20);
+        }
+        else if(level == 2)
+        {
+            getWorld().showText(e, 200, 20);
+        }
+        return e;
+    }
+    public String geefo(String o)
+    {
+        if(level == 1)
+        {
+            getWorld().showText(o, 35, 20);
+        }
+        else if(level == 2)
+        {
+            getWorld().showText(o, 200, 20);
+        }
+        return o;
+    }
     public int geefPunt(int geld)
     {
         punten = punten + geld;
-        getWorld().showText("Punten: " + punten, 880, 20);
+        getWorld().showText("Punten: " + punten, 500, 20);
+        
         return punten;
     }
     
@@ -225,7 +263,17 @@ public class Hero extends Mover {
         
         this.poppoe = pop;
         if (Greenfoot.isKeyDown("w") && velocityY == 0) {
-            velocityY = -14.5;
+            if(poppoe == 1){
+                velocityY = -17;
+            }
+            else if(poppoe == 2)
+            {
+                velocityY = -19;
+            }
+            else if (poppoe == 3)
+            {
+                velocityY = -16;
+            }
         }
 
         
@@ -242,7 +290,7 @@ public class Hero extends Mover {
             }
             else if(poppoe == 2)
             {
-                velocityX = -7;
+                velocityX = -6.5;
             }
             else if (poppoe == 3)
             {
@@ -258,7 +306,7 @@ public class Hero extends Mover {
             }
             else if(poppoe == 2)
             {
-                velocityX = 7;
+                velocityX = 6.5;
             }
             else if (poppoe == 3)
             {

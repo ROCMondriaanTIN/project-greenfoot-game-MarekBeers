@@ -58,7 +58,11 @@ private CollisionEngine ce;
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         
-        showText("punten: "+ Hero.punten, 100, 100);
+        showText("punten: "+ Hero.punten, 500, 100);
+        
+        showText("Begin character.", 200, 300);
+        showText("Vanaf 1000 punten.", 500, 300);
+        showText("Vanaf 3000 punten.", 800, 300);
         
         addObject(new GrootBlauwHoofdje(level), 500, 400);
         addObject(new GrootGroenHoofdje(level), 200, 400);
