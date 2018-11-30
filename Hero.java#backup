@@ -68,7 +68,7 @@ public class Hero extends Mover {
             if (enemy != null) {
                 //getWorld().removeObject(this);
                 //setLocation(255, 700);
-                int poppetjenr = 1;
+                //int poppetjenr = 1;
                 Greenfoot.setWorld(new GameOver(level, pop));
                 return;
             }
@@ -77,16 +77,8 @@ public class Hero extends Mover {
             if (enemy != null) {
                 //getWorld().removeObject(this);
                 //setLocation(255, 700);
-                int poppetjenr = 1;
+                //int poppetjenr = 1;
                 Greenfoot.setWorld(new GameOver(level, pop));
-                return;
-            }
-        }
-        for (Actor enemy : getIntersectingObjects(EnemyJump.class)) {
-            if (enemy != null) {
-                //getWorld().removeObject(this);
-                //setLocation(255, 700);
-                velocityY = -30;
                 return;
             }
         }
@@ -94,9 +86,18 @@ public class Hero extends Mover {
             TileExtended tile = (TileExtended) liquidWater;
             if (tile != null && tile.type == "water") {
                 //getWorld().removeObject(this);
-                //setLocation(255, 700);
+                setLocation(255, 700);
                 Greenfoot.setWorld(new GameOver(level, pop));
                 break;
+            }
+        }
+        for (Actor enemy : getIntersectingObjects(EnemyJump.class)) {
+            if (enemy != null) {
+                //getWorld().removeObject(this);
+                //setLocation(255, 700);
+                //int poppetjenr = 1;
+                velocityY = -30;
+                return;
             }
         }
     }
@@ -211,6 +212,10 @@ public class Hero extends Mover {
     //hello there:]
     public void animateRight(int poppoe)
     {
+        GreenfootImage walk08 = new GreenfootImage("p"+ poppoe +"_walk08.png");
+        GreenfootImage walk08 = new GreenfootImage("p"+ poppoe +"_walk08.png");
+        GreenfootImage walk08 = new GreenfootImage("p"+ poppoe +"_walk08.png");
+        
         walking = true;
         kijkpos = true;
         lopen = true;
@@ -256,18 +261,21 @@ public class Hero extends Mover {
    
     public void stopWalking(int poppoe)
     {
-        
+        GreenfootImage walk08 = new GreenfootImage("p"+ poppoe +"_walk08.png");
+        walk08.scale(65,90);
+        GreenfootImage invwalk08 = new GreenfootImage("p"+ poppoe +"inv_walk08.png");
+        invwalk08.scale(65,90);
         for(int i = 1; i<=2; i++)
         {
             i++;
             lopen = false;
             if (!lopen){
             if (kijkpos){
-                setImage ("p"+ poppoe +"_walk08.png");
+                setImage (walk08);
             }
             else
             {
-                setImage ("p"+ poppoe +"inv_walk08.png");
+                setImage (invwalk08);
             }
         }
         }
@@ -278,7 +286,7 @@ public class Hero extends Mover {
     public void handleInput(int pop) {
         
         this.poppoe = pop;
-        if (Greenfoot.isKeyDown("w") && velocityY == 0) {
+        if (Greenfoot.isKeyDown("w") && velocityY == 0/* && onGround() == true*/) {
             if(poppoe == 1){
                 velocityY = -17;
             }
@@ -300,23 +308,7 @@ public class Hero extends Mover {
         
        
         
-        if (Greenfoot.isKeyDown("a")) {
-            if(poppoe == 1){
-                velocityX = -6;
-            }
-            else if(poppoe == 2)
-            {
-                velocityX = -6.5;
-            }
-            else if (poppoe == 3)
-            {
-                velocityX = -8;
-            }
-            if(animationCounter % 2 == 0)
-                animateLeft(poppoe);
-            
-        } else if (Greenfoot.isKeyDown("d")) {
-            
+        if (Greenfoot.isKeyDown("d")) {
             if(poppoe == 1){
                 velocityX = 6;
             }
@@ -329,7 +321,23 @@ public class Hero extends Mover {
                 velocityX = 8;
             }
             if(animationCounter % 2 == 0)
-            animateRight(poppoe);
+                animateRight(poppoe);
+            
+        } else if (Greenfoot.isKeyDown("a")) {
+            
+            if(poppoe == 1){
+                velocityX = -6;
+            }
+            else if(poppoe == 2)
+            {
+                velocityX = -6.5;
+            }
+            else if (poppoe == 3)
+            {
+                velocityX = -8;
+            }
+            if(animationCounter % 2 == 0)
+            animateLeft(poppoe);
         }
     }
 

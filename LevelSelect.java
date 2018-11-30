@@ -31,7 +31,7 @@ public class LevelSelect extends World
         }
         if (Greenfoot.isKeyDown("2"))
         {
-            Greenfoot.setWorld(new MyWorldVraag(popie, 2));
+            Greenfoot.setWorld(new Testing(popie));
         }
         if (Greenfoot.isKeyDown("3"))
         {

@@ -84,8 +84,8 @@ public class MyWorld extends World {
     public void act() {
         ce.update();
 
-        showText("Tijd: "+timer.Time(), 500, 50);
-         if(timer.Time() <= 0)
+        showText("Tijd: "+timer.Timelvl1(), 500, 50);
+         if(timer.Timelvl1() <= 0)
         {
             Greenfoot.setWorld(new GameOver(1, popie));
         }

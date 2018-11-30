@@ -15,7 +15,7 @@ public class Timer
      */
     public Timer()
     {
-        startTime = java.lang.System.currentTimeMillis()+91000;
+        startTime = java.lang.System.currentTimeMillis();
         //System.out.println(java.lang.System.currentTimeMillis());
     }
 
@@ -25,10 +25,25 @@ public class Timer
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-    public long Time()
+    public long Timelvl1()
     {
-        long tijd = (startTime -java.lang.System.currentTimeMillis()) / 1000;
         
+        long tijd = (startTime -java.lang.System.currentTimeMillis()) / 1000;
+        if(tijd <= 0)
+        {
+           startTime += 91000;  
+        }
+        //System.out.println(tijd);
+        return tijd;
+    }
+    public long Timelvl2()
+    {
+        
+        long tijd = (startTime -java.lang.System.currentTimeMillis()) / 1000;
+        if(tijd <= 0)
+        {
+           startTime += 201000;  
+        }
         //System.out.println(tijd);
         return tijd;
     }
