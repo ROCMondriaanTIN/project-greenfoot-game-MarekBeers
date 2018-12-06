@@ -11,7 +11,7 @@ public class Level3 extends World
     private CollisionEngine ce;
     public int level = 3;
 
-    GreenfootSound music = new GreenfootSound("Loopdeloop Galaxy - Super Mario Galaxy.mp3");
+    GreenfootSound music = new GreenfootSound("Wild Glide Galaxy - Super Mario Galaxy 2.mp3");
     int pop;
     Hero hero;
     Timer timer;
