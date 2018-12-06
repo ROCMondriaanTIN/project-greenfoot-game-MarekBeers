@@ -11,6 +11,7 @@ public class PopSelect extends World
 private CollisionEngine ce;
     public int level = 1;
 
+    GreenfootSound music = new GreenfootSound("Super Mario Galaxy 2 Soundtrack - World 4.mp3");
     int levelre;
     int pop;
     /**
@@ -80,16 +81,23 @@ private CollisionEngine ce;
     public void act() {
         ce.update();
 
-        
+        if(!music.isPlaying())
+        {
+            music.play();
+        }
     }
 
+    public void stopped()
+    {
+        music.stop();
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
     {
-        Cross cross = new Cross(pop);
+        Cross cross = new Cross(pop,10);
         addObject(cross,966,34);
     }
 }

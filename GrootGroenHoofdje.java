@@ -35,7 +35,7 @@ public class GrootGroenHoofdje extends Actor
             BlauwHoofdje hofbl = new BlauwHoofdje(pop);
             GroenHoofdje hofgr = new GroenHoofdje(pop);
             RozeHoofdje hofro = new RozeHoofdje(pop);
-            Cross cross = new Cross(pop);
+            Cross cross = new Cross(pop,0);
             Restart restart = new Restart(level, pop);
             BlueBox blue = new BlueBox(pop);
             //Level2 lv2 = new Level2(pop);
@@ -43,6 +43,7 @@ public class GrootGroenHoofdje extends Actor
             //Level1 lv1 = new Level1(pop);
             Level_1Pic pic1 = new Level_1Pic(pop);
             Greenfoot.setWorld(new LevelSelect(pop));
+            ((PopSelect)getWorld()).stopped();
         }
     } 
 }

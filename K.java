@@ -28,6 +28,7 @@ public class K extends Mover
                 Hero h = (Hero)hero;
                 h.geefPunt(geld);
                 h.geefK(k);
+                Greenfoot.playSound("Sonic Ring sound Effect in stereo.mp3");
                 getWorld().removeObject(this);
             }
         }

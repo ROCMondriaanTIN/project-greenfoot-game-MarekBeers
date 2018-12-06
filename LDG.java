@@ -23,6 +23,7 @@ public class LDG extends Actor
         if (Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new LevelSelect(pop));
+            
         }
     }    
 }

@@ -12,6 +12,8 @@ public class Level_1Pic extends Actor
     public Level_1Pic(int pop)
     {
         this.pop = pop;
+        
+        
     }
     /**
      * Act - do whatever the Level_1Pic wants to do. This method is called whenever
@@ -19,9 +21,12 @@ public class Level_1Pic extends Actor
      */
     public void act() 
     {
-        if (Greenfoot.mouseClicked(this))
+       if (Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new MyWorldVraag(pop, 1));
+            ((LevelSelect)getWorld()).stopped();
         }
-    }    
+        
+    }
+    
 }

@@ -12,6 +12,7 @@ public class LevelCleared extends World
     int pop;
     int level = 10;
 
+    
     /**
      * Constructor for objects of class LevelCleared.
      * 
@@ -22,6 +23,7 @@ public class LevelCleared extends World
         super(1000, 800, 1); 
         this.pop = pop;
         prepare();
+        Greenfoot.playSound("Video Game Level Win _ Clear Sound Effect.mp3");
     }
 
     /**

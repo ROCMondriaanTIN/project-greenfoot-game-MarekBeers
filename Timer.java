@@ -31,12 +31,23 @@ public class Timer
         long tijd = (startTime -java.lang.System.currentTimeMillis()) / 1000;
         if(tijd <= 0)
         {
-           startTime += 91000;  
+           startTime += 81000;  
         }
         //System.out.println(tijd);
         return tijd;
     }
     public long Timelvl2()
+    {
+        
+        long tijd = (startTime -java.lang.System.currentTimeMillis()) / 1000;
+        if(tijd <= 0)
+        {
+           startTime += 121000;  
+        }
+        //System.out.println(tijd);
+        return tijd;
+    }
+    public long Timelvl3()
     {
         
         long tijd = (startTime -java.lang.System.currentTimeMillis()) / 1000;

@@ -22,6 +22,7 @@ public class O extends Mover
                 Hero h = (Hero)hero;
                 h.geefPunt(geld);
                 h.geefo("O");
+                Greenfoot.playSound("Sonic Ring sound Effect in stereo.mp3");
                 getWorld().removeObject(this);
                 
             }

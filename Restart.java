@@ -49,7 +49,7 @@ public class Restart extends Actor
     {
         if (Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new MyWorld(knopppie));
+            Greenfoot.setWorld(new Level3(knopppie));
         }
     }
     }

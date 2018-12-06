@@ -11,6 +11,7 @@ public class StartScherm extends World
 
     
     int pop = 1;
+    
     /**
      * Constructor for objects of class StartScherm.
      * 
@@ -27,50 +28,68 @@ public class StartScherm extends World
     
     public void act()
     {
+        
+        
         if (Greenfoot.isKeyDown("enter"))
         {
             Greenfoot.setWorld(new LevelSelect(2));
+            //music.stop();
         }
         if (Greenfoot.isKeyDown("space"))
         {
             Greenfoot.setWorld(new LevelSelect(1));
+            //music.stop();
         }
         if (Greenfoot.isKeyDown("ctrl"))
         {
             Greenfoot.setWorld(new LevelSelect(1));
+            //music.stop();
         }
         if (Greenfoot.isKeyDown("shift"))
         {
             Greenfoot.setWorld(new LevelSelect(1));
+            //music.stop();
         }
         if (Greenfoot.isKeyDown("w"))
         {
             Greenfoot.setWorld(new LevelSelect(1));
+            //music.stop();
         }
         if (Greenfoot.isKeyDown("a"))
         {
             Greenfoot.setWorld(new LevelSelect(1));
+            //music.stop();
         }
         if (Greenfoot.isKeyDown("s"))
         {
             Greenfoot.setWorld(new LevelSelect(1));
+            //music.stop();
         }
         if (Greenfoot.isKeyDown("d"))
         {
             Greenfoot.setWorld(new LevelSelect(1));
+            //music.stop();
         }
 
         if (Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new LevelSelect(1));
+            //music.stop();
         }
         
         if (Greenfoot.isKeyDown("h"))
         {
-            Greenfoot.setWorld(new MyWorld(2));
+            Greenfoot.setWorld(new LevelSelect(2));
+            //music.stop();
+        }
+        if (Greenfoot.isKeyDown("j"))
+        {
+            Greenfoot.setWorld(new LevelSelect(3));
+            //music.stop();
         }
     }
 
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -81,5 +100,6 @@ public class StartScherm extends World
         addObject(startButtons,492,580);
         LDG lDG = new LDG(1);
         addObject(lDG,500,132);
+       
     }
 }

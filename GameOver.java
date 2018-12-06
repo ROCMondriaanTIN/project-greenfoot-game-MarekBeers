@@ -23,6 +23,7 @@ public class GameOver extends World
         this.pop = pop;
     }
 
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -31,7 +32,7 @@ public class GameOver extends World
     {
         Restart restart = new Restart(level, pop);
         addObject(restart,500,700);
-        Cross cross = new Cross(pop);
+        Cross cross = new Cross(pop,0);
         addObject(cross,966,32);
     }
 }

@@ -27,10 +27,11 @@ public class SelectLevelNummer extends Actor
     {
         if (Greenfoot.mouseClicked(this))
         {
+            ((LevelSelect)getWorld()).stopped();
             switch(this.level){
             case 1: Greenfoot.setWorld(new MyWorldVraag(pop, this.level));break;
-            case 2: Greenfoot.setWorld(new Testing(pop));break;
-            case 3: break;
+            case 2: Greenfoot.setWorld(new TestingVraag(pop, level));break;
+            case 3: Greenfoot.setWorld(new Level3Vraag(pop));break;
             case 4: break;
             case 5: break;
             case 6: break;

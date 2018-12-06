@@ -23,6 +23,7 @@ public class RozeHoofdje extends Actor
         if (Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new PopSelect(pop));
+            ((LevelSelect)getWorld()).stopped();
         }
     }    
 }

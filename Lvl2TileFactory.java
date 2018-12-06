@@ -240,8 +240,8 @@ public class Lvl2TileFactory extends TileFactory
           tile.isSolid = false;
           break;
         case 57:
-          tile = new Tile("coinBronze.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-          tile.isSolid = true;
+          tile = new TileExtended("coinBronze.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT , "coin");
+          tile.isSolid = false;
           break;
         case 58:
           tile = new Tile("coinGold.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

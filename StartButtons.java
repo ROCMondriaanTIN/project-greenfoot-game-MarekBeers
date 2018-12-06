@@ -23,6 +23,7 @@ public class StartButtons extends Actor
         if (Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new LevelSelect(pop));
+            //((StartScherm)getWorld()).stopped();
         }
     }    
 }

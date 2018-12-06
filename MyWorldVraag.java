@@ -11,6 +11,7 @@ public class MyWorldVraag extends World
 
     int pop;
     int level;
+    
     /**
      * Constructor for objects of class MyWorldVraag.
      * 
@@ -21,7 +22,7 @@ public class MyWorldVraag extends World
         super(1000, 800, 1); 
         this.pop = pop;
         this.level = level;
-
+        //Greenfoot.playSound("Myworld level vraag.mp3");
         prepare(pop, level);
     }
 
@@ -42,7 +43,7 @@ public class MyWorldVraag extends World
     private void prepare(int pop, int level)
     {
 
-        Cross cross = new Cross(pop);
+        Cross cross = new Cross(pop,0);
         addObject(cross, 965, 30);
         Cont cont = new Cont(pop, level);
         addObject(cont,484,699);

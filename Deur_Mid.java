@@ -9,9 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Deur_Mid extends Mover
 {
     int pop;
-    public Deur_Mid(int pop)
+    int lvl;
+    public Deur_Mid(int pop, int lvl)
     {
         this.pop = pop;
+        this.lvl = lvl;
     }
     /**
      * Act - do whatever the Deur_Mid wants to do. This method is called whenever
@@ -19,10 +21,31 @@ public class Deur_Mid extends Mover
      */
     public void act() 
     {
-        if (getOneIntersectingObject(Hero.class)!=null && getWorld().getObjects(K.class).isEmpty() && getWorld().getObjects(O.class).isEmpty() && getWorld().getObjects(E.class).isEmpty())
-        {
-            Greenfoot.setWorld(new LevelCleared(pop));
-        }
+        if(lvl == 1){
+            if (getOneIntersectingObject(Hero.class)!=null && getWorld().getObjects(K.class).isEmpty() && getWorld().getObjects(O.class).isEmpty() && getWorld().getObjects(E.class).isEmpty())
+            {
+                Greenfoot.setWorld(new LevelCleared(pop));
+                ((MyWorld)getWorld()).stopped();
+            }   
+       }
+       else if (lvl == 2)
+       {
+           if (getOneIntersectingObject(Hero.class)!=null && getWorld().getObjects(K.class).isEmpty() && getWorld().getObjects(A.class).isEmpty() && getWorld().getObjects(A2.class).isEmpty() && getWorld().getObjects(S.class).isEmpty())
+           {
+               Greenfoot.setWorld(new LevelCleared(pop));
+               ((Testing)getWorld()).stopped();
+           }
+       }
+       else if (lvl == 3)
+       {
+           if (getOneIntersectingObject(Hero.class)!=null && getWorld().getObjects(Knop.class).isEmpty() && getWorld().getObjects(R.class).isEmpty() && getWorld().getObjects(E.class).isEmpty() && getWorld().getObjects(G.class).isEmpty() && getWorld().getObjects(E2.class).isEmpty() && getWorld().getObjects(N.class).isEmpty())
+           {
+               Greenfoot.setWorld(new LevelCleared(pop));
+               ((Level3)getWorld()).stopped();
+           }
+       }
+            else{}
+        
         applyVelocity();
     }    
 }

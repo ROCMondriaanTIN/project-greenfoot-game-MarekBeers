@@ -22,6 +22,7 @@ public class BlauwHoofdje extends Actor
         if (Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new PopSelect(pop));
+            ((LevelSelect)getWorld()).stopped();
         }
     }    
 }

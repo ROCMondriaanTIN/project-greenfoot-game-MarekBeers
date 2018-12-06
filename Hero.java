@@ -42,6 +42,7 @@ public class Hero extends Mover {
         this.level = level;
         this.pop = pop;
         
+        
     }
 
     
@@ -69,7 +70,23 @@ public class Hero extends Mover {
                 //getWorld().removeObject(this);
                 //setLocation(255, 700);
                 int poppetjenr = 1;
+                if(level == 1){
+                ((MyWorld)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
+            else if (level == 2)
+            {
+                ((Testing)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
+            else if (level == 3)
+            {
+                ((Level3)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
+            else{}
                 Greenfoot.setWorld(new GameOver(level, pop));
+               
                 return;
             }
         }
@@ -78,7 +95,25 @@ public class Hero extends Mover {
                 //getWorld().removeObject(this);
                 //setLocation(255, 700);
                 int poppetjenr = 1;
+                if(level == 1){
+                ((MyWorld)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+                
+            }
+            else if (level == 2)
+            {
+                ((Testing)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+                
+            }
+            else if (level == 3)
+            {
+                ((Level3)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
+            else{}
                 Greenfoot.setWorld(new GameOver(level, pop));
+                
                 return;
             }
         }
@@ -87,6 +122,7 @@ public class Hero extends Mover {
                 //getWorld().removeObject(this);
                 //setLocation(255, 700);
                 velocityY = -30;
+                Greenfoot.playSound("Boing Sound Effect.mp3");
                 return;
             }
         }
@@ -95,14 +131,109 @@ public class Hero extends Mover {
             if (tile != null && tile.type == "water") {
                 //getWorld().removeObject(this);
                 //setLocation(255, 700);
+                if(level == 1){
+                ((MyWorld)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
+            else if (level == 2)
+            {
+                ((Testing)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
+            else if (level == 3)
+            {
+                ((Level3)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
+            else{}
                 Greenfoot.setWorld(new GameOver(level, pop));
+                
+                
                 break;
             }
         }
+        for (Actor coinBronze : getIntersectingObjects(TileExtended.class)) {
+            TileExtended tile = (TileExtended) coinBronze;
+            if (tile != null && tile.type == "coin") {
+                int geld = 5;
+                geefPunt(geld);
+                Greenfoot.playSound("Super Mario Bros.-Coin Sound Effect.mp3");
+                getWorld().removeObject(tile);
+            }
+        }
     }
-     
     
-    
+    public String geefe2(String e2)
+    {
+        if(level == 3)
+        {
+            getWorld().showText(e2, 65, 20);
+        }
+        return e2;
+    }
+    public String geefn(String n)
+    {
+        if(level == 3)
+        {
+            getWorld().showText(n, 80, 20);
+        }
+        
+        return n;
+    }
+    public String geefa(String a)
+    {
+        if(level == 1)
+        {
+            getWorld().showText(a, 20, 20);
+        }
+        else if(level == 2)
+        {
+            getWorld().showText(a, 50, 20);
+        }
+        return a;
+    }
+    public String geefr(String r)
+    {
+        if(level == 3)
+        {
+            getWorld().showText(r, 20, 20);
+        }
+        
+        return r;
+    }
+    public String geefg(String g)
+    {
+        if(level == 3)
+        {
+            getWorld().showText(g,50, 20);
+        }
+        
+        return g;
+    }
+    public String geefa2(String a2)
+    {
+        if(level == 1)
+        {
+            getWorld().showText(a2, 20, 20);
+        }
+        else if(level == 2)
+        {
+            getWorld().showText(a2, 35, 20);
+        }
+        return a2;
+    }
+    public String geefs(String s)
+    {
+        if(level == 1)
+        {
+            getWorld().showText(s, 20, 20);
+        }
+        else if(level == 2)
+        {
+            getWorld().showText(s, 65, 20);
+        }
+        return s;
+    }
     public String geefK(String k)
     {
         if(level == 1)
@@ -111,7 +242,7 @@ public class Hero extends Mover {
         }
         else if(level == 2)
         {
-            getWorld().showText(k, 200, 20);
+            getWorld().showText(k, 20, 20);
         }
         return k;
     }
@@ -124,6 +255,10 @@ public class Hero extends Mover {
         else if(level == 2)
         {
             getWorld().showText(e, 200, 20);
+        }
+        else if(level == 3)
+        {
+            getWorld().showText(e, 35, 20);
         }
         return e;
     }
@@ -156,9 +291,17 @@ public class Hero extends Mover {
     
     public boolean onGround()
     {
-        Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
+        /*Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
         Tile tile = (Tile) under;
-        return tile != null && tile.isSolid == true;
+        return tile != null && tile.isSolid == true;*/
+        Actor underLeft = getOneObjectAtOffset(-getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
+        Actor underRight = getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
+        Tile tile1 = (Tile) underLeft;
+        Tile tile2 = (Tile) underRight;
+
+        //return (underCenter != null || underLeft != null || underRight != null) && tile1.isSolid == true;
+        return (tile1 != null && tile1.isSolid) || (tile2 != null && tile2.isSolid);
+        //return tile1 != null && tile1.isSolid == true;
         
     }
     
@@ -278,7 +421,8 @@ public class Hero extends Mover {
     public void handleInput(int pop) {
         
         this.poppoe = pop;
-        if (Greenfoot.isKeyDown("w") && velocityY == 0) {
+        if (Greenfoot.isKeyDown("w") && /*velocityY == 0*/ onGround() == true) {
+            
             if(poppoe == 1){
                 velocityY = -17;
             }
@@ -291,7 +435,7 @@ public class Hero extends Mover {
                 velocityY = -16;
             }
         }
-
+        
         
         if (!Greenfoot.isKeyDown("a")) {
             if(!Greenfoot.isKeyDown("d"))

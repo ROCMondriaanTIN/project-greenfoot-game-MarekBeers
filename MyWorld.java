@@ -10,6 +10,7 @@ public class MyWorld extends World {
     public int level = 1;
     
 
+    GreenfootSound music = new GreenfootSound("Super Mario Galaxy 2 Soundtrack - Title.mp3");
     Hero hero;
     Timer timer;
     public int popie;
@@ -84,15 +85,21 @@ public class MyWorld extends World {
     public void act() {
         ce.update();
 
+        if(!music.isPlaying())
+        {
+            music.play();
+        }
         showText("Tijd: "+timer.Timelvl1(), 500, 50);
-         if(timer.Timelvl1() <= 0)
+         if(timer.Timelvl1() <= 1)
         {
             Greenfoot.setWorld(new GameOver(1, popie));
+            stopped();
         }
     }
 
-    public void setImage()
+    public void stopped()
     {
+        music.stop();
         
     }
     
@@ -102,14 +109,14 @@ public class MyWorld extends World {
      */
     private void prepare()
     {
-        Cross cross = new Cross(popie);
+        Cross cross = new Cross(popie, 1);
         addObject(cross,966,34);
 
         //TimerRunOut timerrunout = new TimerRunOut();
 
         K k = new K(level);
         addObject(k,1525,600);
-        Deur_Mid deur_Mid = new Deur_Mid(popie);
+        Deur_Mid deur_Mid = new Deur_Mid(popie, 1);
         addObject(deur_Mid,5700,625);
         Deur_Top deur_Top = new Deur_Top();
         addObject(deur_Top,5700,570);

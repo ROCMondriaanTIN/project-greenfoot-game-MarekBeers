@@ -19,7 +19,9 @@ public class Munt extends Mover
             {
                 Hero h = (Hero)hero;
                 h.geefPunt(geld);
+                Greenfoot.playSound("Super Mario Bros.-Coin Sound Effect.mp3");
                 getWorld().removeObject(this);
+                
             }
         }
         applyVelocity();
