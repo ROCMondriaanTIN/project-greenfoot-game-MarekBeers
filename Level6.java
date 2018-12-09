@@ -92,12 +92,12 @@ public class Level6 extends World
     @Override
     public void act() {
         ce.update();
-        showText("Tijd: "+timer.Timelvl3(), 500, 50);
+        showText("Tijd: "+timer.Timelvl1(), 500, 50);
         if(!music.isPlaying())
         {
             music.play();
         }
-        if(timer.Timelvl3() <= 1)
+        if(timer.Timelvl1() <= 1)
         {
             Greenfoot.setWorld(new GameOver(level, pop));
             music.stop();

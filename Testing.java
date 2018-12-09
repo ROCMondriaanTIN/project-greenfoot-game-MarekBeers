@@ -115,8 +115,8 @@ public class Testing extends World
     @Override
     public void act() {
         ce.update();
-        showText("Tijd: "+timer.Timelvl2(), 500, 50);
-         if(timer.Timelvl2() <= 1)
+        showText("Tijd: "+timer.Timelvl3(), 500, 50);
+         if(timer.Timelvl3() <= 1)
         {
             Greenfoot.setWorld(new GameOver(1, pop));
             stopped();

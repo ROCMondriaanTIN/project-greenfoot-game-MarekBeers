@@ -28,7 +28,7 @@ public class Level4Vraag extends World
      */
     private void prepare(int pop)
     {
-        Cont cont = new Cont(pop, 12);
+        Cont cont = new Cont(pop, 4);
         addObject(cont,480,702);
         Cross cross = new Cross(pop, 12);
         addObject(cross,970,31);

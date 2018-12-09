@@ -115,12 +115,12 @@ public class Level3 extends World
     @Override
     public void act() {
         ce.update();
-        showText("Tijd: "+timer.Timelvl2(), 500, 50);
+        showText("Tijd: "+timer.Timelvl3(), 500, 50);
         if(!music.isPlaying())
         {
             music.play();
         }
-        if(timer.Timelvl2() <= 1)
+        if(timer.Timelvl3() <= 1)
         {
             Greenfoot.setWorld(new GameOver(level, pop));
             music.stop();
