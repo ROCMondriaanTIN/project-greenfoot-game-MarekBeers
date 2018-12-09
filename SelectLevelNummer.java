@@ -32,9 +32,9 @@ public class SelectLevelNummer extends Actor
             case 1: Greenfoot.setWorld(new MyWorldVraag(pop, this.level));break;
             case 2: Greenfoot.setWorld(new TestingVraag(pop, level));break;
             case 3: Greenfoot.setWorld(new Level3Vraag(pop));break;
-            case 4: break;
-            case 5: break;
-            case 6: break;
+            case 4: Greenfoot.setWorld(new Level4Vraag(pop));break;
+            case 5: Greenfoot.setWorld(new Level5Vraag(pop));break;
+            case 6: Greenfoot.setWorld(new Level6Vraag(pop));break;
         }
           
         }

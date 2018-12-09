@@ -44,6 +44,30 @@ public class Deur_Mid extends Mover
                ((Level3)getWorld()).stopped();
            }
        }
+       else if (lvl == 4)
+       {
+           if (getOneIntersectingObject(Hero.class)!=null && getWorld().getObjects(D.class).isEmpty() && getWorld().getObjects(R.class).isEmpty() && getWorld().getObjects(E.class).isEmpty() && getWorld().getObjects(U.class).isEmpty())
+           {
+               Greenfoot.setWorld(new LevelCleared(pop));
+               ((Level4)getWorld()).stopped();
+           }
+       }
+       else if (lvl == 5)
+       {
+           if (getOneIntersectingObject(Hero.class)!=null && getWorld().getObjects(L.class).isEmpty() && getWorld().getObjects(E.class).isEmpty() && getWorld().getObjects(T.class).isEmpty() && getWorld().getObjects(T2.class).isEmpty() && getWorld().getObjects(E2.class).isEmpty() && getWorld().getObjects(R.class).isEmpty())
+           {
+               Greenfoot.setWorld(new LevelCleared(pop));
+               ((Level5)getWorld()).stopped();
+           }
+       }
+       else if (lvl == 6)
+       {
+           if (getOneIntersectingObject(Hero.class)!=null && getWorld().getObjects(D.class).isEmpty() && getWorld().getObjects(R.class).isEmpty() && getWorld().getObjects(O.class).isEmpty() && getWorld().getObjects(N.class).isEmpty() && getWorld().getObjects(E.class).isEmpty())
+           {
+               Greenfoot.setWorld(new LevelCleared(pop));
+               ((Level6)getWorld()).stopped();
+           }
+       }
             else{}
         
         applyVelocity();

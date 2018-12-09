@@ -39,6 +39,18 @@ public class Cont extends Actor
         {
             Greenfoot.setWorld(new Level3(pop));
         }
+        else if (level == 4 && Greenfoot.mouseClicked(this))
+        {
+            Greenfoot.setWorld(new Level4(pop));
+        }
+        else if (level == 5 && Greenfoot.mouseClicked(this))
+        {
+            Greenfoot.setWorld(new Level5(pop));
+        }
+        else if (level == 6 && Greenfoot.mouseClicked(this))
+        {
+            Greenfoot.setWorld(new Level6(pop));
+        }
         else if (level == 10)
         {
             if (Greenfoot.mouseClicked(this))

@@ -30,5 +30,7 @@ public class Level3Vraag extends World
     {
         Cont cont = new Cont(pop, 3);
         addObject(cont,480,702);
+        Cross cross = new Cross(pop, 12);
+        addObject(cross,970,30);
     }
 }

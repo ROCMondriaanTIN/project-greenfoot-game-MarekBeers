@@ -195,5 +195,7 @@ public class MyWorld extends World {
         addObject(munt34,5920,615);
         Munt munt35 = new Munt();
         addObject(munt35,5980,615);
+        UitLeg uitLeg = new UitLeg();
+        addObject(uitLeg,612,500);
     }
 }

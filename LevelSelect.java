@@ -69,13 +69,13 @@ public class LevelSelect extends World
         addObject(l3, 800,280);
 
         SelectLevelNummer l4 = new SelectLevelNummer(kop, 4);
-        addObject(l4, 200,500);
+        addObject(l4, 200,480);
 
         SelectLevelNummer l5 = new SelectLevelNummer(kop, 5);
-        addObject(l5, 500,500);
+        addObject(l5, 500,480);
 
         SelectLevelNummer l6 = new SelectLevelNummer(kop, 6);
-        addObject(l6, 800,500);
+        addObject(l6, 800,480);
         //Greenfoot.playSound("The Lost Luma - Super Mario Galaxy 2.mp3");
         /* Level1 level1 = new Level1(kop);
         addObject(level1,200,280);
@@ -106,5 +106,11 @@ public class LevelSelect extends World
         addObject(level_2Pic,500,380);
         Level_3Pic level_3Pic = new Level_3Pic(kop);
         addObject(level_3Pic,800,380);
+        Level_4Pic level_4Pic = new Level_4Pic(kop);
+        addObject(level_4Pic,200,580);
+        Level_5Pic level_5Pic = new Level_5Pic(kop);
+        addObject(level_5Pic,500,580);
+        Level_6Pic level_6Pic = new Level_6Pic(kop);
+        addObject(level_6Pic,800,580);
     }
 }

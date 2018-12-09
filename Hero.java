@@ -50,12 +50,12 @@ public class Hero extends Mover {
     public void act() {
         
         onGround();
-        
-       
+        onSnake();
+        onSpike();
         handleInput(pop);
-        
+        onJump();
         animationCounter ++;
-        
+        onWater();
         location();
         
         velocityX *= drag;
@@ -84,6 +84,21 @@ public class Hero extends Mover {
                 ((Level3)getWorld()).stopped();
                 Greenfoot.playSound("Roblox Death Sound Effect.mp3");
             }
+            else if (level == 4)
+            {
+                ((Level4)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
+            else if (level == 5)
+            {
+                ((Level5)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
+            else if (level == 5)
+            {
+                ((Level5)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
             else{}
                 Greenfoot.setWorld(new GameOver(level, pop));
                
@@ -91,7 +106,15 @@ public class Hero extends Mover {
             }
         }
         for (Actor enemy : getIntersectingObjects(EnemySnake.class)) {
-            if (enemy != null) {
+            if(onSnake()==true)
+            {
+                EnemySnake snake = (EnemySnake) enemy;
+                Greenfoot.playSound("Super Mario Bros- Goomba Stomp Sound.mp3");
+                int geld = 25;
+                geefPunt(geld);
+                getWorld().removeObject(snake);
+            }
+            else if (enemy != null) {
                 //getWorld().removeObject(this);
                 //setLocation(255, 700);
                 int poppetjenr = 1;
@@ -111,26 +134,39 @@ public class Hero extends Mover {
                 ((Level3)getWorld()).stopped();
                 Greenfoot.playSound("Roblox Death Sound Effect.mp3");
             }
+            else if (level == 4)
+            {
+                ((Level4)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
+            else if (level == 5)
+            {
+                ((Level5)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
+            else if (level == 6)
+            {
+                ((Level6)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
             else{}
                 Greenfoot.setWorld(new GameOver(level, pop));
                 
                 return;
             }
         }
-        for (Actor enemy : getIntersectingObjects(EnemyJump.class)) {
-            if (enemy != null) {
-                //getWorld().removeObject(this);
-                //setLocation(255, 700);
+        if(onJump() == true){
                 velocityY = -30;
                 Greenfoot.playSound("Boing Sound Effect.mp3");
                 return;
             }
-        }
-        for (Actor liquidWater : getIntersectingObjects(TileExtended.class)) {
-            TileExtended tile = (TileExtended) liquidWater;
-            if (tile != null && tile.type == "water") {
+        
+        // for (Actor liquidWater : getIntersectingObjects(TileExtended.class)) {
+            // TileExtended tile = (TileExtended) liquidWater;
+            // if (tile != null && tile.type == "water") {
                 //getWorld().removeObject(this);
                 //setLocation(255, 700);
+                if(onWater() == true){
                 if(level == 1){
                 ((MyWorld)getWorld()).stopped();
                 Greenfoot.playSound("Roblox Death Sound Effect.mp3");
@@ -145,13 +181,27 @@ public class Hero extends Mover {
                 ((Level3)getWorld()).stopped();
                 Greenfoot.playSound("Roblox Death Sound Effect.mp3");
             }
+            else if (level == 4)
+            {
+                ((Level4)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
+            else if (level == 5)
+            {
+                ((Level5)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }else if (level == 6)
+            {
+                ((Level6)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+            }
             else{}
                 Greenfoot.setWorld(new GameOver(level, pop));
                 
                 
-                break;
+                
             }
-        }
+        
         for (Actor coinBronze : getIntersectingObjects(TileExtended.class)) {
             TileExtended tile = (TileExtended) coinBronze;
             if (tile != null && tile.type == "coin") {
@@ -161,13 +211,71 @@ public class Hero extends Mover {
                 getWorld().removeObject(tile);
             }
         }
+        if (onSpike() == true) {
+                ((Level6)getWorld()).stopped();
+                Greenfoot.playSound("Roblox Death Sound Effect.mp3");
+                Greenfoot.setWorld(new GameOver(level, pop));
+            }
+        
+        
     }
-    
+    public String geefl(String l)
+    {
+        if(level == 5)
+        {
+            getWorld().showText(l, 20, 20);
+        }
+        
+        return l;
+    }
+    public String geeft(String t)
+    {
+        if(level == 5)
+        {
+            getWorld().showText(t, 50, 20);
+        }
+        
+        return t;
+    }
+    public String geeft2(String t2)
+    {
+        if(level == 5)
+        {
+            getWorld().showText(t2, 65, 20);
+        }
+        
+        return t2;
+    }
+    public String geefu(String u)
+    {
+        if(level == 4)
+        {
+            getWorld().showText(u, 50, 20);
+        }
+        
+        return u;
+    }
+    public String geefd(String d)
+    {
+        if(level == 4)
+        {
+            getWorld().showText(d, 20, 20);
+        }
+        if(level == 6)
+        {
+            getWorld().showText(d, 20, 20);
+        }
+        return d;
+    }
     public String geefe2(String e2)
     {
         if(level == 3)
         {
             getWorld().showText(e2, 65, 20);
+        }
+        if(level == 5)
+        {
+            getWorld().showText(e2, 80, 20);
         }
         return e2;
     }
@@ -177,7 +285,14 @@ public class Hero extends Mover {
         {
             getWorld().showText(n, 80, 20);
         }
-        
+        if(level == 3)
+        {
+            getWorld().showText(n, 80, 20);
+        }
+        if(level == 6)
+        {
+            getWorld().showText(n, 65, 20);
+        }
         return n;
     }
     public String geefa(String a)
@@ -198,7 +313,18 @@ public class Hero extends Mover {
         {
             getWorld().showText(r, 20, 20);
         }
-        
+        if(level == 4)
+        {
+            getWorld().showText(r, 65, 20);
+        }
+        if(level == 5)
+        {
+            getWorld().showText(r, 95, 20);
+        }
+        if(level == 6)
+        {
+            getWorld().showText(r, 35, 20);
+        }
         return r;
     }
     public String geefg(String g)
@@ -260,6 +386,18 @@ public class Hero extends Mover {
         {
             getWorld().showText(e, 35, 20);
         }
+        else if(level == 4)
+        {
+            getWorld().showText(e, 35, 20);
+        }
+        else if(level == 5)
+        {
+            getWorld().showText(e, 35, 20);
+        }
+        else if(level == 6)
+        {
+            getWorld().showText(e, 80, 20);
+        }
         return e;
     }
     public String geefo(String o)
@@ -271,6 +409,10 @@ public class Hero extends Mover {
         else if(level == 2)
         {
             getWorld().showText(o, 200, 20);
+        }
+        else if(level == 6)
+        {
+            getWorld().showText(o, 50, 20);
         }
         return o;
     }
@@ -296,17 +438,66 @@ public class Hero extends Mover {
         return tile != null && tile.isSolid == true;*/
         Actor underLeft = getOneObjectAtOffset(-getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
         Actor underRight = getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
+        Actor underCenter = getOneObjectAtOffset(0, getImage().getHeight() / 2, Tile.class);
         Tile tile1 = (Tile) underLeft;
         Tile tile2 = (Tile) underRight;
+        Tile tile3 = (Tile) underCenter;
 
         //return (underCenter != null || underLeft != null || underRight != null) && tile1.isSolid == true;
-        return (tile1 != null && tile1.isSolid) || (tile2 != null && tile2.isSolid);
+        return (tile1 != null && tile1.isSolid) || (tile2 != null && tile2.isSolid) || (tile3 != null && tile3.isSolid);
         //return tile1 != null && tile1.isSolid == true;
         
     }
+    public boolean onSnake()
+    {
+        Actor underCenter = getOneObjectAtOffset(0, getImage().getHeight() / 2, EnemySnake.class);
+        Actor underLeft = getOneObjectAtOffset(-getImage().getWidth() / 2, getImage().getHeight() / 2, EnemySnake.class);
+        Actor underRight = getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2, EnemySnake.class);
+        EnemySnake snake = (EnemySnake) underCenter;
+        EnemySnake snake2 = (EnemySnake) underLeft;
+        EnemySnake snake3 = (EnemySnake) underRight;
+
+        
+        return (snake != null) || (snake2 != null) || (snake3 != null);
+        
+        
+    }
+    public boolean onJump()
+    {
+        Actor underCenter = getOneObjectAtOffset(0, getImage().getHeight() / 2, EnemyJump.class);
+        Actor underLeft = getOneObjectAtOffset(-getImage().getWidth() / 2, getImage().getHeight() / 2, EnemyJump.class);
+        Actor underRight = getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2, EnemyJump.class);
+        EnemyJump jump = (EnemyJump) underCenter;
+        EnemyJump jump2 = (EnemyJump) underLeft;
+        EnemyJump jump3 = (EnemyJump) underRight;
+
+        
+        return (jump != null) || (jump2 != null) || (jump3 != null);
+        
+        
+    }
+    public boolean onSpike()
+    {
+        
+        Actor underCenter = getOneObjectAtOffset(0, getImage().getHeight() / 2, TileExtended.class);
+        
+        TileExtended Spiked = (TileExtended) underCenter;
+        
+        return (Spiked != null && Spiked.type == "spike");
+        
     
+    }
+    public boolean onWater()
+    {
+        
+        Actor underCenter = getOneObjectAtOffset(0, getImage().getHeight() / 2, TileExtended.class);
+        
+        TileExtended Water = (TileExtended) underCenter;
+        
+        return (Water != null && Water.type == "water");
+        
     
-    
+    }
     public void animateLeft(int poppoe)
     {
         walking = true;

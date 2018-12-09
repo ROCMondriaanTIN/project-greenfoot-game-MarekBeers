@@ -18,9 +18,9 @@ public class R extends Mover
      */
     public void act() 
     {
-        for (Actor hero : getIntersectingObjects(Hero.class))
+        for (Actor hero : getObjectsInRange(200, Hero.class))
         {
-            if (hero != null)
+            if (Greenfoot.mouseClicked(this))
             {
                 Hero h = (Hero)hero;
                 h.geefPunt(geld);

@@ -52,6 +52,27 @@ public class Restart extends Actor
             Greenfoot.setWorld(new Level3(knopppie));
         }
     }
+    else if (level == 4)
+    {
+        if (Greenfoot.mouseClicked(this))
+        {
+            Greenfoot.setWorld(new Level4(knopppie));
+        }
+    }
+    else if (level == 5)
+    {
+        if (Greenfoot.mouseClicked(this))
+        {
+            Greenfoot.setWorld(new Level5(knopppie));
+        }
+    }
+    else if (level == 6)
+    {
+        if (Greenfoot.mouseClicked(this))
+        {
+            Greenfoot.setWorld(new Level6(knopppie));
+        }
+    }
     }
     
 }

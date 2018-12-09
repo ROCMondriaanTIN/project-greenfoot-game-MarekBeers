@@ -35,9 +35,25 @@ public class Cross extends Actor
             {
                 ((Level3)getWorld()).stopped();
             }
+            else if (lvl == 4)
+            {
+                ((Level4)getWorld()).stopped();
+            }
+            else if (lvl == 5)
+            {
+                ((Level5)getWorld()).stopped();
+            }
+            else if (lvl == 6)
+            {
+                ((Level6)getWorld()).stopped();
+            }
             else if(lvl==10)
             {
                 ((PopSelect)getWorld()).stopped();
+            }
+            else if(lvl>11)
+            {
+                
             }
         }
     }    

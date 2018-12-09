@@ -1012,7 +1012,7 @@ public class Lvl2TileFactory extends TileFactory
           tile.isSolid = true;
           break;
         case 250:
-          tile = new Tile("spikes.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+          tile = new TileExtended("spikes.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT, "spike");
           tile.isSolid = true;
           break;
         case 251:
