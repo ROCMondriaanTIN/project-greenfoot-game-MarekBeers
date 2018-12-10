@@ -612,7 +612,7 @@ public class Hero extends Mover {
     public void handleInput(int pop) {
         
         this.poppoe = pop;
-        if (Greenfoot.isKeyDown("w") && /*velocityY == 0*/ onGround() == true) {
+        if (Greenfoot.isKeyDown("up") && /*velocityY == 0*/ onGround() == true) {
             
             if(poppoe == 1){
                 velocityY = -17;
@@ -628,14 +628,14 @@ public class Hero extends Mover {
         }
         
         
-        if (!Greenfoot.isKeyDown("a")) {
-            if(!Greenfoot.isKeyDown("d"))
+        if (!Greenfoot.isKeyDown("left")) {
+            if(!Greenfoot.isKeyDown("right"))
             stopWalking(poppoe);
         }
         
        
         
-        if (Greenfoot.isKeyDown("a")) {
+        if (Greenfoot.isKeyDown("left")) {
             if(poppoe == 1){
                 velocityX = -6;
             }
@@ -650,7 +650,7 @@ public class Hero extends Mover {
             if(animationCounter % 2 == 0)
                 animateLeft(poppoe);
             
-        } else if (Greenfoot.isKeyDown("d")) {
+        } else if (Greenfoot.isKeyDown("right")) {
             
             if(poppoe == 1){
                 velocityX = 6;
